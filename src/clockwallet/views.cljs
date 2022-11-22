@@ -7,7 +7,7 @@
 
 (defn home-panel []
   [:section.container-c.login
-   [:h2 "ClockWallet"]
+   [:h2.home-title "ClockWallet"]
    [:img.clock-img {:src "clockwallet.png"}]
    [:section.container-c.inputs-login
     [:label.container-c "Email: "

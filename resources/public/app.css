@@ -11,12 +11,25 @@ body {
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  font-family: Verdana;
+  background-image: url("economy-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+:root {
+  --smooth-white: rgb(250, 250, 250);
 }
 
 .container-c {
   display: flex;
   flex-flow: column nowrap;
   border: 3px solid blue;
+}
+
+.home-title {
+  font-size: 32px;
+  color: var(--smooth-white);
 }
 
 .login {
@@ -35,6 +48,7 @@ body {
   width: 25%;
   height: 25%;
   justify-content: space-between;
+  color: var(--smooth-white)
 }
 
 .clock-img {
