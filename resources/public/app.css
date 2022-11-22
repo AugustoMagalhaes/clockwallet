@@ -12,9 +12,9 @@ body {
   height: 100vh;
   width: 100vw;
   font-family: Verdana;
-  background-image: url("economy-bg.jpg");
+  background-image: url("/images/economy-bg.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 
 :root {
@@ -24,17 +24,17 @@ body {
 .container-c {
   display: flex;
   flex-flow: column nowrap;
-  border: 3px solid blue;
 }
 
 .home-title {
-  font-size: 32px;
+  font-size: 42px;
   color: var(--smooth-white);
+  font-weight: 700;
 }
 
 .login {
   width: 50vw;
-  height: 50vh;
+  height: 60vh;
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
@@ -45,17 +45,46 @@ body {
 .inputs-login {
   display: flex;
   flex-flow: column nowrap;
-  width: 25%;
-  height: 25%;
+  width: 40%;
+  height: 30%;
   justify-content: space-between;
-  color: var(--smooth-white)
+  color: var(--smooth-white);
+}
+
+.email, .password {
+  border-radius: 10px;
+  height: 40px;
+  font-size: 22px;
+  padding: 10px;
+  margin-top: 10px;
+  color: rgb(13, 13, 83);
 }
 
 .clock-img {
   width: 20%;
 }
 
+.login-label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .container-r {
   display: flex;
   flex-flow: row nowrap;
+}
+
+.login-btn {
+  width: 130px;
+  height: 40px;
+  font-size: 20px;
+  color:#000058;
+  background-color: var(--smooth-white);
+  border: none;
+  border-radius: 50px;
+}
+
+.login-btn:hover {
+  background-color: #005842;
+  color: var(--smooth-white);
 }

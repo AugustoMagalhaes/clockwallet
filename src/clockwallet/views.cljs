@@ -8,13 +8,13 @@
 (defn home-panel []
   [:section.container-c.login
    [:h2.home-title "ClockWallet"]
-   [:img.clock-img {:src "clockwallet.png"}]
+   [:img.clock-img {:src "/images/clockwal-removebg-preview.png"}]
    [:section.container-c.inputs-login
-    [:label.container-c "Email: "
+    [:label.container-c.login-label "Email: "
      [:input.email {:type "text"}]]
-    [:label.container-c "Senha: "
+    [:label.container-c.login-label "Senha: "
      [:input.password {:type "password"}]]]
-   [:button "Login"]])
+   [:button.login-btn "Login"]])
 
 (defmethod routes/panels :home-panel [] [home-panel])
 
