@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: rgb(155, 253, 152);
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
 .container-c {
   display: flex;
   flex-flow: column nowrap;
@@ -17,6 +26,7 @@
   align-items: center;
   margin: 0 auto;
   align-self: center;
+  margin-top: auto;
 }
 
 .inputs-login {
