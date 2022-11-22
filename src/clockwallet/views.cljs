@@ -7,8 +7,14 @@
 
 (defn home-panel []
   [:section.container-c.login
-    [:input.email {:type "text"}]
-    [:input.password {:type "password"}]])
+   [:h2 "ClockWallet"]
+   [:img.clock-img {:src "clockwallet.png"}]
+   [:section.container-c.inputs-login
+    [:label.container-c "Email: "
+     [:input.email {:type "text"}]]
+    [:label.container-c "Senha: "
+     [:input.password {:type "password"}]]]
+   [:button "Login"]])
 
 (defmethod routes/panels :home-panel [] [home-panel])
 

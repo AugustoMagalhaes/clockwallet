@@ -7,10 +7,22 @@
 .login {
   width: 50vw;
   height: 50vh;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin: 0 auto;
   align-self: center;
+}
+
+.inputs-login {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 25%;
+  height: 25%;
+  justify-content: space-between;
+}
+
+.clock-img {
+  width: 20%;
 }
 
 .container-r {
