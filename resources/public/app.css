@@ -1,0 +1,19 @@
+.container-c {
+  display: flex;
+  flex-flow: column nowrap;
+  border: 3px solid blue;
+}
+
+.login {
+  width: 50vw;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  align-self: center;
+}
+
+.container-r {
+  display: flex;
+  flex-flow: row nowrap;
+}
