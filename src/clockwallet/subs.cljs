@@ -1,13 +1,27 @@
 (ns clockwallet.subs
-  (:require
-   [re-frame.core :as re-frame]))
+  (:require [re-frame.core :as rf]))
 
-(re-frame/reg-sub
- ::name
+(rf/reg-sub
+ ::email-correto
  (fn [db]
-   (:name db)))
+   (get-in db [:credenciais-corretas :email])))
 
-(re-frame/reg-sub
+(rf/reg-sub
+ ::senha-correta
+ (fn [db]
+   (get-in db [:credenciais-corretas :password])))
+
+(rf/reg-sub
+ ::senha
+ (fn [db]
+   (:password db)))
+
+(rf/reg-sub
+ ::email
+ (fn [db]
+   (:email db)))
+
+(rf/reg-sub
  ::active-panel
  (fn [db _]
    (:active-panel db)))
