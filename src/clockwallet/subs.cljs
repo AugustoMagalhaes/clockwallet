@@ -3,22 +3,22 @@
 
 (rf/reg-sub
  ::email-correto
- (fn [db]
+ (fn [db _]
    (get-in db [:credenciais-corretas :email])))
 
 (rf/reg-sub
  ::senha-correta
- (fn [db]
+ (fn [db _]
    (get-in db [:credenciais-corretas :password])))
 
 (rf/reg-sub
  ::senha
- (fn [db]
+ (fn [db _]
    (:password db)))
 
 (rf/reg-sub
  ::email
- (fn [db]
+ (fn [db _]
    (:email db)))
 
 (rf/reg-sub
