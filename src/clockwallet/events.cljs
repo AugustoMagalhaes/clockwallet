@@ -30,5 +30,10 @@
 
 (rf/reg-event-db
  ::try-login
- (fn [db [_ email password]]
-   (let [senha-correta ()])))
+ (fn-traced [db [_ email password]]
+            (if
+             (and
+              (= (:email db) (-> db :credenciais-corretas :email))
+              (= (:password db) (-> db :credenciais-corretas :password)))
+              (prn "logou")
+              (prn "nao logou"))))
