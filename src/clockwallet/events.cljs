@@ -20,12 +20,15 @@
 
 (rf/reg-event-db
  ::update-email
- (fn [db [_ email]]
+ (fn-traced [db [_ email]]
    (assoc db :email email)))
 
 (rf/reg-event-db
  ::update-senha
- (fn [db [_ password]]
+ (fn-traced [db [_ password]]
    (assoc db :password password)))
 
-
+(rf/reg-event-db
+ ::try-login
+ (fn [db [_ email password]]
+   (let [senha-correta ()])))
