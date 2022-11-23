@@ -25,3 +25,10 @@
  ::active-panel
  (fn [db _]
    (:active-panel db)))
+
+(rf/reg-sub
+ ::disabled-login-btn
+ (fn [db _]
+   (let [email-invalido? (empty? (re-matches #".+\@.+\..+" (:email db)))
+         senha-invalida? (< (count (:password db)) 6)] 
+     (or email-invalido? senha-invalida?))))
