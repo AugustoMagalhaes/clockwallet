@@ -1,4 +1,4 @@
 (ns clockwallet.db)
 
 (def default-db
-  {:email "admin" :password "admin"})
+  {:email "" :password "" :credenciais-corretas {:email "admin" :password "admin"}})
