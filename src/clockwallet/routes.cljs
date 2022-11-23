@@ -1,9 +1,8 @@
 (ns clockwallet.routes
-  (:require
-   [bidi.bidi :as bidi]
-   [pushy.core :as pushy]
-   [re-frame.core :as re-frame]
-   [clockwallet.events :as events]))
+  (:require [bidi.bidi :as bidi]
+            [clockwallet.events :as events]
+            [pushy.core :as pushy]
+            [re-frame.core :as re-frame]))
 
 (defmulti panels identity)
 (defmethod panels :default [] [:div "No panel found for this route."])
@@ -11,7 +10,7 @@
 (def routes
   (atom
     ["/" {""      :home
-          "about" :about}]))
+          "wallet" :wallet}]))
 
 (defn parse
   [url]
