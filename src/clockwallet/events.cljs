@@ -22,3 +22,10 @@
  ::update-email
  (fn [db [_ email]]
    (assoc db :email email)))
+
+(rf/reg-event-db
+ ::update-senha
+ (fn [db [_ password]]
+   (assoc db :password password)))
+
+

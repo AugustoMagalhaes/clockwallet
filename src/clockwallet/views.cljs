@@ -14,7 +14,7 @@
      [:input.email {:type "text"} ]]
     [:label.container-c.login-label "Senha: "
      [:input.password {:type "password"}]]]
-   [:button.login-btn {:on-click #(rf/dispatch [::events/navigate :about])}"Login"]])
+   [:button.login-btn "Login"]])
 
 (defmethod routes/panels :home-panel [] [home-panel])
 
