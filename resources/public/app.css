@@ -85,7 +85,12 @@ body {
   margin-top: 20px;
 }
 
-.login-btn:hover {
+.login-btn:hover:enabled {
   background-color: #005842;
   color: var(--smooth-white);
+}
+
+.login-btn:disabled, .login-btn:disabled:hover {
+  background-color: #b1b1b1;
+  color: #e6e6e6
 }
