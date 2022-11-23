@@ -6,10 +6,10 @@
   []
   [:header {:style {:color "white"}} "header de wallet"])
 
-(defn wallet-panel
+(defn wallet
   []
   (main-header))
 
-(defmethod routes/panels :wallet-panel [] [wallet-panel])
+(defmethod routes/panels :wallet-panel [] [wallet])
 
 (prn rf/reg-event-db)

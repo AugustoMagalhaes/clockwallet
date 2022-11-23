@@ -1,13 +1,11 @@
 (ns clockwallet.core
-  (:require
-   [reagent.dom :as rdom]
-   [re-frame.core :as re-frame]
-   [clockwallet.events :as events]
-   [clockwallet.routes :as routes]
-   [clockwallet.views :as views]
-   [clockwallet.config :as config]
-   ))
-
+  (:require [clockwallet.config :as config]
+            [clockwallet.events :as events]
+            [clockwallet.routes :as routes]
+            [clockwallet.views :as views]
+            [clockwallet.wallet.views]
+            [re-frame.core :as re-frame]
+            [reagent.dom :as rdom]))
 
 (defn dev-setup []
   (when config/debug?
