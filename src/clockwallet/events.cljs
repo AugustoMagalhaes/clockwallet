@@ -1,21 +1,20 @@
 (ns clockwallet.events
-  (:require
-   [re-frame.core :as re-frame]
-   [clockwallet.db :as db]
-   [day8.re-frame.tracing :refer-macros [fn-traced]]
-   ))
+  (:require [clockwallet.db :as db]
+            [day8.re-frame.tracing :refer-macros [fn-traced]]
+            [re-frame.core :as rf]))
 
-(re-frame/reg-event-db
+(rf/reg-event-db
  ::initialize-db
  (fn-traced [_ _]
    db/default-db))
 
-(re-frame/reg-event-fx
+(rf/reg-event-fx
   ::navigate
   (fn-traced [_ [_ handler]]
    {:navigate handler}))
 
-(re-frame/reg-event-fx
+(rf/reg-event-fx
  ::set-active-panel
  (fn-traced [{:keys [db]} [_ active-panel]]
    {:db (assoc db :active-panel active-panel)}))
+
