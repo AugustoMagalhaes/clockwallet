@@ -18,3 +18,7 @@
  (fn-traced [{:keys [db]} [_ active-panel]]
    {:db (assoc db :active-panel active-panel)}))
 
+(rf/reg-event-db
+ ::update-email
+ (fn [db [_ email]]
+   (assoc db :email email)))
