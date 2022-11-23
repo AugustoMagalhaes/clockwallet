@@ -1,4 +1,4 @@
 (ns clockwallet.db)
 
 (def default-db
-  {:name "re-frame"})
+  {:email "admin" :password "admin"})
