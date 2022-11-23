@@ -46,7 +46,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   width: 40%;
-  height: 30%;
+  height: 35%;
   justify-content: space-between;
   color: var(--smooth-white);
 }
@@ -82,6 +82,7 @@ body {
   background-color: var(--smooth-white);
   border: none;
   border-radius: 50px;
+  margin-top: 20px;
 }
 
 .login-btn:hover {
