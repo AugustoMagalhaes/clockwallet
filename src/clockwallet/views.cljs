@@ -18,7 +18,7 @@
        [:input.email {:type "text" :value @email :on-change #(rf/dispatch-sync [::events/update-email (-> % .-target .-value)])}]]
       [:label.container-c.login-label "Senha: "
        [:input.password {:type "password" :value @senha :on-change #(rf/dispatch [::events/update-senha (-> % .-target .-value)])}]]]
-     [:button.login-btn {:disabled @btn-login-disabled? :on-click #(prn (-> % .-target .-disabled))}"Login"]]))
+     [:button.login-btn {:disabled @btn-login-disabled? :on-click #(rf/dispatch [::events/try-login])} "Login"]]))
 
 (defmethod routes/panels :home-panel [] [home-panel])
 
