@@ -19,21 +19,21 @@
    {:db (assoc db :active-panel active-panel)}))
 
 (rf/reg-event-db
- ::update-email
- (fn-traced [db [_ email]]
-   (assoc db :email email)))
+ ::atualiza-campo
+ (fn-traced [db [_ campo valor]]
+   (assoc-in db [:credenciais-usuario campo] valor)))
 
-(rf/reg-event-db
- ::update-senha
- (fn-traced [db [_ password]]
-   (assoc db :password password)))
+(defn credenciais-validas?
+  [db]
+  (= (:credenciais-usuario db) (:credenciais-corretas db)))
 
-(rf/reg-event-db
+(rf/reg-event-fx
  ::try-login
- (fn-traced [db [_ email password]]
-            (if
-             (and
-              (= (:email db) (-> db :credenciais-corretas :email))
-              (= (:password db) (-> db :credenciais-corretas :password)))
-              (prn "logou")
-              (prn "nao logou"))))
+ (fn [{:keys [db]} [_]]
+   (if (credenciais-validas? db)
+     {:db db
+      :fx [[:dispatch [::navigate :wallet]]]}
+     {:db (assoc db :erro "Credenciais inválidas")})))
+
+
+
