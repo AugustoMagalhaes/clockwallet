@@ -2,24 +2,9 @@
   (:require [re-frame.core :as rf]))
 
 (rf/reg-sub
- ::email-correto
- (fn [db _]
-   (get-in db [:credenciais-corretas :email])))
-
-(rf/reg-sub
- ::senha-correta
- (fn [db _]
-   (get-in db [:credenciais-corretas :password])))
-
-(rf/reg-sub
- ::senha
- (fn [db _]
-   (:password db)))
-
-(rf/reg-sub
- ::email
- (fn [db _]
-   (:email db)))
+ ::credenciais-usuario
+ (fn [db [_ campo]]
+   (get-in db [:credenciais-usuario campo])))
 
 (rf/reg-sub
  ::active-panel
@@ -29,6 +14,7 @@
 (rf/reg-sub
  ::disabled-login-btn
  (fn [db _]
-   (let [email-invalido? (empty? (re-matches #".+\@.+\..+" (:email db)))
-         senha-invalida? (< (count (:password db)) 6)] 
+   (let [email-invalido? (empty? (re-matches #".+\@.+\..+" (get-in db [:credenciais-usuario :email])))
+         senha-invalida? (< (count (get-in db [:credenciais-usuario :password])) 6)]
      (or email-invalido? senha-invalida?))))
+
