@@ -31,7 +31,7 @@
  ::try-login
  (fn [{:keys [db]} [_]]
    (if (credenciais-validas? db)
-     {:db db
+     {:db (dissoc db :erro)
       :fx [[:dispatch [::navigate :wallet]]]}
      {:db (assoc db :erro "Credenciais inválidas")})))
 
