@@ -18,3 +18,8 @@
          senha-invalida? (< (count (get-in db [:credenciais-usuario :password])) 6)]
      (or email-invalido? senha-invalida?))))
 
+(rf/reg-sub
+ ::erro-login
+ (fn [db _]
+   (:erro db)))
+
