@@ -20,8 +20,10 @@
 
 (rf/reg-event-db
  ::atualiza-campo
- (fn-traced [db [_ campo valor]]
-   (assoc-in db [:credenciais-usuario campo] valor)))
+ (fn-traced [db [_ campo valor tem-erro?]]
+   (-> db
+       (when (:erro db) (dissoc db :erro))
+       (assoc-in [:credenciais-usuario campo] valor))))
 
 (defn credenciais-validas?
   [db]

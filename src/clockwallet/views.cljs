@@ -19,7 +19,7 @@
      [:img.clock-img {:src "/images/clockwal-removebg-preview.png"}]
      [:section.container-c.inputs-login
       [:label.container-c.login-label "Email: "
-       [:input.email {:type "text" :value @email :on-change #(rf/dispatch [::events/atualiza-campo :email (-> % .-target .-value)])}]]
+       [:input.email {:type "text" :value @email :on-change #(rf/dispatch [::events/atualiza-campo :email (-> % .-target .-value) @erro])}]]
       [:label.container-c.login-label "Senha: "
        [:input.password {:type "password" :value @senha :on-change #(rf/dispatch [::events/atualiza-campo :password (-> % .-target .-value)])}]]]
      (when @erro [erro-p @erro])
