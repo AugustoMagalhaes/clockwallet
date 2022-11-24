@@ -4,11 +4,16 @@
             [clockwallet.subs :as subs]
             [re-frame.core :as rf]))
 ;; home
+(defn erro-p
+  [mensagem]
+  [:p {:style {:color "red" :margin-top "10px"}} mensagem])
+
 (defn home-panel
   []
   (let [email (rf/subscribe [::subs/credenciais-usuario :email])
         senha (rf/subscribe [::subs/credenciais-usuario :password])
-        btn-login-disabled? (rf/subscribe [::subs/disabled-login-btn])]
+        btn-login-disabled? (rf/subscribe [::subs/disabled-login-btn])
+        erro (rf/subscribe [::subs/erro-login])]
     [:section.container-c.login
      [:h2.home-title "ClockWallet"]
      [:img.clock-img {:src "/images/clockwal-removebg-preview.png"}]
@@ -17,6 +22,7 @@
        [:input.email {:type "text" :value @email :on-change #(rf/dispatch [::events/atualiza-campo :email (-> % .-target .-value)])}]]
       [:label.container-c.login-label "Senha: "
        [:input.password {:type "password" :value @senha :on-change #(rf/dispatch [::events/atualiza-campo :password (-> % .-target .-value)])}]]]
+     (when @erro [erro-p @erro])
      [:button.login-btn {:disabled @btn-login-disabled? :on-click #(rf/dispatch [::events/try-login])} "Login"]]))
 
 (defmethod routes/panels :home-panel [] [home-panel])
